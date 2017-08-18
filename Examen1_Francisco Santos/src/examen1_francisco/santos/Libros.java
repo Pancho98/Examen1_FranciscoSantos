@@ -12,13 +12,13 @@ public class Libros {
     private String genero;
     private int valor;
     private int edicion;
-    private int autor;
+    private String autor;
     private Date año;
 
     public Libros() {
     }
 
-    public Libros(String titulo, String descripcion, int puntaje, int copias, String genero, int valor, int edicion, int autor, Date año) {
+    public Libros(String titulo, String descripcion, int puntaje, int copias, String genero, int valor, int edicion, String autor, Date año) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.puntaje = puntaje;
@@ -86,11 +86,11 @@ public class Libros {
         this.edicion = edicion;
     }
 
-    public int getAutor() {
+    public String getAutor() {
         return autor;
     }
 
-    public void setAutor(int autor) {
+    public void setAutor(String autor) {
         this.autor = autor;
     }
 

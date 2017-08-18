@@ -1,10 +1,14 @@
 
 package examen1_francisco.santos;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 
 public class Usuarios {
+    ArrayList<Usuarios> amigos=new ArrayList();
+    ArrayList solicitudes=new ArrayList();
+    ArrayList<Libros>MisLibros=new ArrayList();
     private String Nombre;
     private String user;
     private String contraseña;
