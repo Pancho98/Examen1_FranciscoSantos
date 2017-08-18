@@ -5,6 +5,10 @@
  */
 package examen1_francisco.santos;
 
+import java.util.ArrayList;
+import java.util.Date;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Francisco Santos
@@ -32,19 +36,28 @@ public class LibreriaVirtual extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        Nombre = new javax.swing.JTextField();
+        tf_Nombre = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        Usuario = new javax.swing.JTextField();
+        tf_Usuario = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        Contraseña = new javax.swing.JTextField();
+        tf_Contraseña = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        Telefono = new javax.swing.JTextField();
+        tf_Telefono = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        Nacimiento = new com.toedter.calendar.JDateChooser();
+        dc_Nacimiento = new com.toedter.calendar.JDateChooser();
         jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
-        jTabbedPane3 = new javax.swing.JTabbedPane();
+        tf_Correo = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        tf_Favorito = new javax.swing.JTextField();
+        Crear = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        V_Usuario = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        V_Contraseña = new javax.swing.JPasswordField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,54 +65,141 @@ public class LibreriaVirtual extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Log In");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 11, 100, 47));
+        jLabel1.setText("Crear Usuario");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 11, 180, 47));
 
         jLabel2.setText("Nombre");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 76, 22));
-        jPanel2.add(Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 170, -1));
+
+        tf_Nombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_NombreActionPerformed(evt);
+            }
+        });
+        jPanel2.add(tf_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 170, -1));
 
         jLabel3.setText("Nombre Usuario");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, 22));
 
-        Usuario.addActionListener(new java.awt.event.ActionListener() {
+        tf_Usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuarioActionPerformed(evt);
+                tf_UsuarioActionPerformed(evt);
             }
         });
-        jPanel2.add(Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 170, -1));
+        jPanel2.add(tf_Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 170, -1));
 
         jLabel4.setText("Contraseña");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 70, 20));
 
-        Contraseña.addActionListener(new java.awt.event.ActionListener() {
+        tf_Contraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ContraseñaActionPerformed(evt);
+                tf_ContraseñaActionPerformed(evt);
             }
         });
-        jPanel2.add(Contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 170, -1));
+        jPanel2.add(tf_Contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 170, -1));
 
         jLabel5.setText("Telefono");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 60, -1));
 
-        Telefono.addActionListener(new java.awt.event.ActionListener() {
+        tf_Telefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TelefonoActionPerformed(evt);
+                tf_TelefonoActionPerformed(evt);
             }
         });
-        jPanel2.add(Telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 170, -1));
+        jPanel2.add(tf_Telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 170, -1));
 
         jLabel6.setText("Nacimiento");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
-        jPanel2.add(Nacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 170, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
+        jPanel2.add(dc_Nacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 170, -1));
 
         jLabel7.setText("E-mail");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 170, -1));
 
-        jTabbedPane1.addTab("tab1", jPanel2);
-        jTabbedPane1.addTab("tab2", jTabbedPane2);
-        jTabbedPane1.addTab("tab3", jTabbedPane3);
+        tf_Correo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_CorreoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(tf_Correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 170, -1));
+
+        jLabel8.setText("Genero de Lectura Favorito");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 150, 20));
+
+        tf_Favorito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_FavoritoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(tf_Favorito, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 170, -1));
+
+        Crear.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        Crear.setText("Crear");
+        Crear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CrearMouseClicked(evt);
+            }
+        });
+        jPanel2.add(Crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 350, 170, 50));
+
+        jLabel9.setText("(Fantasia,Romance,Accion,Historia)");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, 180, -1));
+
+        jTabbedPane1.addTab("Crear", jPanel2);
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Log In");
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel11.setText("Correo o Usuario");
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel12.setText("Contaseña");
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButton1.setText("Ingresar");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(169, 169, 169)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(V_Usuario, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                                .addComponent(V_Contraseña)))))
+                .addContainerGap(191, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                    .addComponent(V_Usuario))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                    .addComponent(V_Contraseña))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(248, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("tab2", jPanel3);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -116,7 +216,9 @@ public class LibreriaVirtual extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,17 +230,64 @@ public class LibreriaVirtual extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UsuarioActionPerformed
+    private void CrearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearMouseClicked
+        String nombre="",user="",contraseña="",telefono="",correo="",favorito="";
+        Date nacimiento;
+        try {
+            //guardar
+            nombre=tf_Nombre.getText();
+            for (Usuarios t : usr) {
+            if(user!=t.getUser()){
+            user=tf_Usuario.getText();
+            }
+            }
+            contraseña=tf_Contraseña.getText();
+            telefono=tf_Telefono.getText();
+            nacimiento=dc_Nacimiento.getDate();
+            correo=tf_Correo.getText();
+            favorito=tf_Favorito.getText();
+            Usuarios x = new Usuarios(nombre,user,contraseña,telefono,nacimiento,correo,favorito);
+            usr.add(x);
+            //resetear
+            tf_Nombre.setText("");
+            tf_Usuario.setText("");
+            tf_Contraseña.setText("");
+            tf_Telefono.setText("");
+            dc_Nacimiento.setDate(null);
+            tf_Correo.setText("");
+            tf_Favorito.setText("");
+            //Mensaje de guaradado
+            JOptionPane.showMessageDialog(this, "El Usuario se creo con exito");
 
-    private void ContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContraseñaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ContraseñaActionPerformed
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Ocurrio un error y no se guardaro los Datos");
+        }
+    }//GEN-LAST:event_CrearMouseClicked
 
-    private void TelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelefonoActionPerformed
+    private void tf_FavoritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_FavoritoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TelefonoActionPerformed
+    }//GEN-LAST:event_tf_FavoritoActionPerformed
+
+    private void tf_CorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_CorreoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_CorreoActionPerformed
+
+    private void tf_TelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_TelefonoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_TelefonoActionPerformed
+
+    private void tf_ContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_ContraseñaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_ContraseñaActionPerformed
+
+    private void tf_UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_UsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_UsuarioActionPerformed
+
+    private void tf_NombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_NombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_NombreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -176,23 +325,35 @@ public class LibreriaVirtual extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Contraseña;
-    private com.toedter.calendar.JDateChooser Nacimiento;
-    private javax.swing.JTextField Nombre;
-    private javax.swing.JTextField Telefono;
-    private javax.swing.JTextField Usuario;
+    private javax.swing.JButton Crear;
+    private javax.swing.JPasswordField V_Contraseña;
+    private javax.swing.JTextField V_Usuario;
+    private com.toedter.calendar.JDateChooser dc_Nacimiento;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField tf_Contraseña;
+    private javax.swing.JTextField tf_Correo;
+    private javax.swing.JTextField tf_Favorito;
+    private javax.swing.JTextField tf_Nombre;
+    private javax.swing.JTextField tf_Telefono;
+    private javax.swing.JTextField tf_Usuario;
     // End of variables declaration//GEN-END:variables
+ArrayList<Usuarios> usr=new ArrayList();
+ArrayList<Libros> lbrs=new ArrayList();
+
 }
