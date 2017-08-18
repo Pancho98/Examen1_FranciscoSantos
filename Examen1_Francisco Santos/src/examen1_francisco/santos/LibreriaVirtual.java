@@ -9,14 +9,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
-
-
 public class LibreriaVirtual extends javax.swing.JFrame {
 
-    static boolean Admin=false;
-    static boolean usuario=false;
+    static boolean Admin = false;
+    static boolean usuario = false;
     static int pos_user;
-    
+    static String NomAdmin="Goku";
+    static String ContraAdmin="vegeta";
+
     public LibreriaVirtual() {
         initComponents();
     }
@@ -481,8 +481,8 @@ public class LibreriaVirtual extends javax.swing.JFrame {
             nacimiento = dc_Nacimiento.getDate();
             correo = tf_Correo.getText();
             favorito = tf_Favorito.getText().toLowerCase();
-            normal=false;
-            Usuarios x = new Usuarios(nombre, user, contraseña, telefono, nacimiento, correo, favorito,normal);
+            normal = false;
+            Usuarios x = new Usuarios(nombre, user, contraseña, telefono, nacimiento, correo, favorito, normal);
             usr.add(x);
             //resetear
             tf_Nombre.setText("");
@@ -527,31 +527,42 @@ public class LibreriaVirtual extends javax.swing.JFrame {
 
     private void IngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IngresarMouseClicked
         try {
-            
+            String Usu, contra;
+            Usu = V_Usuario.getText();
+            contra = V_Contraseña.getText();
+            pos_user=NumeroUsuario(Usu,contra);
         } catch (Exception e) {
         }
     }//GEN-LAST:event_IngresarMouseClicked
 
-    private int Metodos_NumeroUsuario(){
-    
-}
-    
+    private int NumeroUsuario(String nombre, String contra) {
+        for (int i = 0; i < usr.size(); i++) {
+            if (usr.get(i).getUser().equals(nombre) && usr.get(i).getContraseña().equals(contra)) {
+                pos_user=i;
+                usuario=true;
+            }else if(nombre.equals(NomAdmin)&&contra.equals(ContraAdmin)){
+                Admin=true;
+            }
+        }
+        return pos_user;
+    }
+
     private void GuardaLibrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GuardaLibrosMouseClicked
         try {
             //guardar libros
-            String titulo,descripcion,autor,genero;
-            int puntaje, copias,valor,edicion;
+            String titulo, descripcion, autor, genero;
+            int puntaje, copias, valor, edicion;
             Date año;
-            titulo=tf_titulo.getText();
-            descripcion=ta_descripcion.getText();
-            puntaje=Integer.parseInt(tf_puntaje.getText());
-            copias=Integer.parseInt(tf_copias.getText());
+            titulo = tf_titulo.getText();
+            descripcion = ta_descripcion.getText();
+            puntaje = Integer.parseInt(tf_puntaje.getText());
+            copias = Integer.parseInt(tf_copias.getText());
             autor = tf_autor.getText();
-            genero=tf_genero.getText().toLowerCase();
-            valor=Integer.parseInt(tf_valor.getText());
-            edicion=Integer.parseInt(tf_edicion.getText());
-            año=dc_año.getDate();
-            Libros w = new Libros(titulo,descripcion,puntaje,copias,genero,valor,edicion,autor,año);
+            genero = tf_genero.getText().toLowerCase();
+            valor = Integer.parseInt(tf_valor.getText());
+            edicion = Integer.parseInt(tf_edicion.getText());
+            año = dc_año.getDate();
+            Libros w = new Libros(titulo, descripcion, puntaje, copias, genero, valor, edicion, autor, año);
             lbrs.add(w);
             //
             tf_titulo.setText("");
