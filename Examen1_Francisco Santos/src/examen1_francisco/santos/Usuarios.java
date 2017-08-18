@@ -16,11 +16,12 @@ public class Usuarios {
     private Date nacimiento;
     private String correo;
     private String favorito;
+    private boolean normal;
 
     public Usuarios() {
     }
 
-    public Usuarios(String Nombre, String user, String contraseña, String telefono, Date nacimiento, String correo, String favorito) {
+    public Usuarios(String Nombre, String user, String contraseña, String telefono, Date nacimiento, String correo, String favorito,boolean normal) {
         this.Nombre = Nombre;
         this.user = user;
         this.contraseña = contraseña;
@@ -28,6 +29,7 @@ public class Usuarios {
         this.nacimiento = nacimiento;
         this.correo = correo;
         this.favorito = favorito;
+        this.normal=normal;
     }
 
     public String getNombre() {
@@ -85,6 +87,40 @@ public class Usuarios {
     public void setFavorito(String favorito) {
         this.favorito = favorito;
     }
+
+    public ArrayList<Usuarios> getAmigos() {
+        return amigos;
+    }
+
+    public void setAmigos(ArrayList<Usuarios> amigos) {
+        this.amigos = amigos;
+    }
+
+    public ArrayList getSolicitudes() {
+        return solicitudes;
+    }
+
+    public void setSolicitudes(ArrayList solicitudes) {
+        this.solicitudes = solicitudes;
+    }
+
+    public ArrayList<Libros> getMisLibros() {
+        return MisLibros;
+    }
+
+    public void setMisLibros(ArrayList<Libros> MisLibros) {
+        this.MisLibros = MisLibros;
+    }
+
+    public boolean isNormal() {
+        return normal;
+    }
+
+    public void setNormal(boolean normal) {
+        this.normal = normal;
+    }
+    
+    
 
     @Override
     public String toString() {

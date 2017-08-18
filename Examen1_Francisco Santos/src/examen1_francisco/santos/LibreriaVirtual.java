@@ -9,15 +9,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Francisco Santos
- */
+
+
 public class LibreriaVirtual extends javax.swing.JFrame {
 
-    /**
-     * Creates new form LibreriaVirtual
-     */
+    static boolean Admin=false;
+    static boolean usuario=false;
+    static int pos_user;
+    
     public LibreriaVirtual() {
         initComponents();
     }
@@ -81,6 +80,7 @@ public class LibreriaVirtual extends javax.swing.JFrame {
         dc_año = new com.toedter.calendar.JDateChooser();
         GuardaLibros = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
@@ -233,7 +233,9 @@ public class LibreriaVirtual extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Log In", jPanel3);
 
-        jLabel13.setText("jLabel13");
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("Agrgar Libros");
 
         jLabel14.setText("Titulo");
 
@@ -271,9 +273,6 @@ public class LibreriaVirtual extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(177, 177, 177)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
@@ -292,27 +291,29 @@ public class LibreriaVirtual extends javax.swing.JFrame {
                                     .addGroup(jPanel4Layout.createSequentialGroup()
                                         .addComponent(tf_edicion)
                                         .addGap(3, 3, 3))))
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel4Layout.createSequentialGroup()
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel15)
-                                        .addComponent(jLabel14))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(tf_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(jPanel4Layout.createSequentialGroup()
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel21)
-                                        .addComponent(jLabel22))
-                                    .addGap(42, 42, 42)
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(tf_autor, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(jPanel4Layout.createSequentialGroup()
-                                            .addComponent(dc_año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(49, 49, 49)
-                                            .addComponent(GuardaLibros, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
-                .addContainerGap(219, Short.MAX_VALUE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel15)
+                                    .addComponent(jLabel14))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tf_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel21)
+                                    .addComponent(jLabel22))
+                                .addGap(42, 42, 42)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tf_autor, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addComponent(dc_año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(49, 49, 49)
+                                        .addComponent(GuardaLibros, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(210, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -363,18 +364,28 @@ public class LibreriaVirtual extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Libros", jPanel4);
 
+        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel23.setText("Devolver");
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 534, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(156, 156, 156)
+                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(228, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 495, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(427, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("tab4", jPanel5);
+        jTabbedPane1.addTab("Devolverlos", jPanel5);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -461,6 +472,7 @@ public class LibreriaVirtual extends javax.swing.JFrame {
         try {
             //guardar
             String nombre, user, contraseña, telefono, correo, favorito;
+            boolean normal;
             Date nacimiento;
             nombre = tf_Nombre.getText();
             user = tf_Usuario.getText();
@@ -469,7 +481,8 @@ public class LibreriaVirtual extends javax.swing.JFrame {
             nacimiento = dc_Nacimiento.getDate();
             correo = tf_Correo.getText();
             favorito = tf_Favorito.getText().toLowerCase();
-            Usuarios x = new Usuarios(nombre, user, contraseña, telefono, nacimiento, correo, favorito);
+            normal=false;
+            Usuarios x = new Usuarios(nombre, user, contraseña, telefono, nacimiento, correo, favorito,normal);
             usr.add(x);
             //resetear
             tf_Nombre.setText("");
@@ -514,19 +527,15 @@ public class LibreriaVirtual extends javax.swing.JFrame {
 
     private void IngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IngresarMouseClicked
         try {
-            String user = V_Usuario.getText();
-            String contra = V_Contraseña.getText();
-            for (Usuarios t : usr) {
-                if (user == t.getUser() || user == t.getCorreo() && contra == t.getContraseña()) {
-                    
-                } else {
-                    
-                }
-            }
+            
         } catch (Exception e) {
         }
     }//GEN-LAST:event_IngresarMouseClicked
 
+    private int Metodos_NumeroUsuario(){
+    
+}
+    
     private void GuardaLibrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GuardaLibrosMouseClicked
         try {
             //guardar libros
@@ -544,7 +553,19 @@ public class LibreriaVirtual extends javax.swing.JFrame {
             año=dc_año.getDate();
             Libros w = new Libros(titulo,descripcion,puntaje,copias,genero,valor,edicion,autor,año);
             lbrs.add(w);
+            //
+            tf_titulo.setText("");
+            ta_descripcion.setText("");
+            tf_puntaje.setText("");
+            tf_copias.setText("");
+            tf_autor.setText("");
+            tf_genero.setText("");
+            tf_valor.setText("");
+            tf_edicion.setText("");
+            dc_año.setDate(null);
+            JOptionPane.showMessageDialog(this, "El Libro se registro con exito");
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un error y no se guardo la informacion");
         }
     }//GEN-LAST:event_GuardaLibrosMouseClicked
 
@@ -606,6 +627,7 @@ public class LibreriaVirtual extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
